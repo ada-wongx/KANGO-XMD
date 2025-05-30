@@ -20,11 +20,11 @@ global.SESSION_ID = process.env.SESSION_ID || ''
 
 //--------------------[ BOT NAME ]----------------------//
 
-global.botname = process.env.BOT_NAME || 'KANGO-XMD' 
+global.botname = process.env.BOT_NAME || '☙𝐴𝐷𝐴♡𝑊𝑂𝑁𝐺❦᭄' 
 
 //-----------------[ OWNER NUMBER ]------------------//
 
-global.ownernumber = process.env.OWNER_NUMBER || '233509977126' 
+global.ownernumber = process.env.OWNER_NUMBER || '919643498754' 
 
 //--------------------[ SUDO ]--------------------------//
 
@@ -34,15 +34,15 @@ global.sudo = process.env.SUDO ? process.env.SUDO.split(',') : ['233509977126', 
 
 //-----------------[ OWNER NAME ]------------------//
 
-global.ownername = process.env.OWNER_NAME || 'Hector Manuel' 
+global.ownername = process.env.OWNER_NAME || '𝐵𝐿𝐴𝐶𝐾𝐹𝐴𝑁𝐺' 
 
 //------------[ STICKER PACKNAME ]-----------------//
 
-global.packname = process.env.STICKER_PACK_NAME || "KANGO-XMD" 
+global.packname = process.env.STICKER_PACK_NAME || "☙𝗛𝗘𝗔𝗥𝗧💋𝗦𝗣𝗔𝗖𝗘❦᭄" 
 
 //--------------[ STICKER AUTHOR NAME ]------------//
 
-global.author = process.env.STICKER_AUTHOR_NAME || "Hector" 
+global.author = process.env.STICKER_AUTHOR_NAME || "𝐵𝐿𝐴𝐶𝐾𝐹𝐴𝑁𝐺" 
 
 //----------------[ GITHUB DATABASE ]-----------------//
 
@@ -51,17 +51,17 @@ global.dbToken = process.env.GITHUB_TOKEN || "";
 
 //-----------------[ CONTEXT LINK ]--------------------//
 
-global.plink = process.env.PLINK || "https://youtube.com/@official_manuel"
+global.plink = process.env.PLINK || "https://youtube.com/@iam_blackfang?si=yNeg7eti5sR1v4hA"
 
 //------------------[ WATERMARK ]--------------------//
 
-global.wm = process.env.GL_WM || "> ©KANGO-XMD"
+global.wm = process.env.GL_WM || "> ©𝐵𝐿𝐴𝐶𝐾𝐹𝐴𝑁𝐺"
 
 //---------------------[ REPLIES ]-----------------------//
 
 global.mess = { 
   done: '*Done*', 
-  success: '©kango-xmd', 
+  success: '©𝐵𝐿𝐴𝐶𝐾𝐹𝐴𝑁𝐺', 
   owner: `*You don't have permission to use this command!*`, 
   group: '*This feature becomes available when you use it in a group!*', 
   admin: '*You’ll unlock this feature with me as an admin!*', 
