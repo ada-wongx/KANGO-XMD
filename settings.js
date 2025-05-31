@@ -20,7 +20,7 @@ global.SESSION_ID = process.env.SESSION_ID || ''
 
 //--------------------[ BOT NAME ]----------------------//
 
-global.botname = process.env.BOT_NAME || '☙𝐴𝐷𝐴♡𝑊𝑂𝑁𝐺❦᭄' 
+global.botname = process.env.BOT_NAME || 'ADA-WONG' 
 
 //-----------------[ OWNER NUMBER ]------------------//
 
