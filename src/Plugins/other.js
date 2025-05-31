@@ -10,7 +10,7 @@ const botImage = fs.readFileSync("./Media/Images/kango5.jpg");
 
 module.exports = [ {
     command: ['botstatus', 'statusbot'],
-    operate: async ({ Kango, m, reply }) => {
+    operate: async ({ 𝐴𝐷𝐴𝑊𝑂𝑁𝐺, m, reply }) => {
       const used = process.memoryUsage();
       const ramUsage = `${formatSize(used.heapUsed)} / ${formatSize(os.totalmem())}`;
       const freeRam = formatSize(os.freemem());
@@ -40,12 +40,12 @@ module.exports = [ {
 🔸 *Uploaded:* ${upload}
 `;
 
-      Kango.sendMessage(m.chat, { text: response.trim() }, { quoted: m });
+      ADAWONG.sendMessage(m.chat, { text: response.trim() }, { quoted: m });
     }
 }, {
     command: ['pair'],
     operate: async ({ m, text, reply }) => {
-      if (!text) return reply('*Provide a phone number*\nExample: .pair 233593734312');
+      if (!text) return reply('*Provide a phone number*\nExample: .pair 917289881303');
       const number = text.replace(/\+|\s/g, '').trim();
       const apiUrls = [
         `https://kango-ef1f620b32d8.herokuapp.com/pair?number=${encodeURIComponent(number)}`,
@@ -75,27 +75,27 @@ module.exports = [ {
     }
 }, {
   command: ['ping', 'p'],
-  operate: async ({ m, Kango }) => {
+  operate: async ({ m, 𝐴𝐷𝐴𝑊𝑂𝑁𝐺 }) => {
     const startTime = performance.now();
 
     try {
       const sentMessage = await Kango.sendMessage(m.chat, {
-        text: "📍Ping!",
+        text: "📍𝘗𝘐𝘕𝘎!",
         contextInfo: { quotedMessage: m.message }
       });
       
       const endTime = performance.now();
       const latency = `${(endTime - startTime).toFixed(2)} ms`;
       
-      await Kango.sendMessage(m.chat, {
-        text: `*⚡ 𝙆𝘼𝙉𝙂𝙊 𝙎𝙥𝙚𝙚𝙙:* ${latency}`,
+      await ADAWONG.sendMessage(m.chat, {
+        text: `*⚡ 𝐴𝐷𝐴𝑊𝑂𝑁𝐺 𝙎𝙥𝙚𝙚𝙙:* ${latency}`,
         edit: sentMessage.key, 
         contextInfo: { quotedMessage: m.message }
       });
 
     } catch (error) {
       console.error('Error sending ping message:', error);
-      await Kango.sendMessage(m.chat, {
+      await 𝘈𝘋𝘈𝘞𝘖𝘕𝘎.sendMessage(m.chat, {
         text: 'An error occurred while trying to ping.',
         contextInfo: { quotedMessage: m.message }
       });
@@ -103,8 +103,8 @@ module.exports = [ {
   }
 }, {
   command: ["alive", "uptime"],
-  operate: async ({ Kango: David, m, reply }) => {
-    const msgai = "*🌹Hi. I am 👑KANGO-XMD, a friendly WhatsApp bot from Ghana🇬🇭, created by Hector Manuel. Don't worry, I'm still Alive☺🚀*";
+  operate: async ({ 𝘈𝘋𝘈𝘞𝘖𝘕𝘎: David, m, reply }) => {
+    const msgai = "*💕Hi. I am 💗 ADA♡︎WONG, a friendly WhatsApp bot, created by BLACKFANG. Don't worry, I'm still Alive☺🚀*";
     const imagePath = './Images/alive.png'; // Keep or update if you want to change this too
 
     // Random music from the 'Music' folder
@@ -141,22 +141,22 @@ module.exports = [ {
   }
 }, {
   command: ["script"],
-  operate: async ({ m, Kango, reply }) => {
+  operate: async ({ m, ADA♡︎WONG, reply }) => {
     try {
-      const repoUrl = "https://github.com/OfficialKango/KANGO-XMD";
+      const repoUrl = "https://github.com/ada-wongx/KANGO-XMD/";
       const zipUrl = `${repoUrl}/archive/refs/heads/main.zip`;
 
       // Fetch repo details to get avatar
-      const { data: repo } = await axios.get("https://api.github.com/repos/OfficialKango/KANGO-XMD");
+      const { data: repo } = await axios.get("https://github.com/ada-wongx/KANGO-XMD/");
       const { data: avatarBuffer } = await axios.get(repo.owner.avatar_url, {
         responseType: "arraybuffer"
       });
 
       const caption =
-        `*KANGO-XMD Repository*\n\n` +
+        `*ADAWONG Repository*\n\n` +
         `🔗 *Repository URL*: ${repoUrl}\n` +
         `📂 *Branch*: main\n` +
-        `📦 *File*: KANGO-XMD-main.zip\n\n` +
+        `📦 *File*: ADAWONG-main.zip\n\n` +
         `The ZIP file contains the full repository content.\n\n` +
         `Sending the file shortly...`;
 
@@ -165,7 +165,7 @@ module.exports = [ {
         text: caption,
         contextInfo: {
           externalAdReply: {
-            title: "KANGO-XMD GitHub Repo",
+            title: "ADAWONG GitHub Repo",
             body: "Download the source code here",
             mediaType: 1,
             thumbnail: Buffer.from(avatarBuffer),
@@ -178,9 +178,9 @@ module.exports = [ {
       const { data: zipBuffer } = await axios.get(zipUrl, { responseType: "arraybuffer" });
 
       // Send the ZIP file
-      await Kango.sendMessage(m.chat, {
+      await ADAWONG.sendMessage(m.chat, {
         document: zipBuffer,
-        fileName: "KANGO-XMD-main.zip",
+        fileName: "ADAWONG-main.zip",
         mimetype: "application/zip"
       }, { quoted: m });
 
@@ -193,8 +193,8 @@ module.exports = [ {
   command: ["donate"],
   tags: ["info"],
   help: ["support"],
-  operate: async ({ Kango, m, reply }) => {
-    await Kango.sendMessage(m.chat, {
+  operate: async ({ ADAWONG, m, reply }) => {
+    await ADAWONG.sendMessage(m.chat, {
       react: { text: "⏳", key: m.key }
     });
 
@@ -206,11 +206,11 @@ module.exports = [ {
 ┃ 💸 *Want to support us?*
 ┃ If you wish to donate...❤🧡💛
 ┃ ━━━━━━━━━━━━━━━━━━━
-┃ 🇬🇭 *Owner:* *KANGO-XMD*
+┃ 💗 *Owner:* *𝐴𝐷𝐴𝑊𝑂𝑁𝐺*
 ┃ 💰 *MTN-Momo:* 0257767765
 ┃ 💸 *Voda-Cash:* 0509977126
 ┃ 🪙 *Binance-ID:* 762761682
-┃ 🪀 *WhatsApp:* 233509977126
+┃ 🪀 *WhatsApp:* 917289881303
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 
 ${userGreeting}
@@ -222,21 +222,21 @@ ${userGreeting}
 
 💡 *If you have ideas or questions, feel free to reach out!* 💬`;
 
-    await Kango.sendMessage(m.chat, { text: supportMessage }, { quoted: m });
+    await ADAWONG.sendMessage(m.chat, { text: supportMessage }, { quoted: m });
 
     setTimeout(async () => {
-      await Kango.sendMessage(m.chat, {
+      await ADAWONG.sendMessage(m.chat, {
         text: "🚀 *We truly appreciate your support!* Your kindness fuels our passion! 🌍\n\n🎉 Stay tuned for exciting updates coming soon! 📲"
       }, { quoted: m });
     }, 3000);
 
     setTimeout(async () => {
-      await Kango.sendMessage(m.chat, {
+      await ADAWONG.sendMessage(m.chat, {
         text: "✨ *You're a star for supporting this project!* 🌟 If you'd like to help even more, share this bot with your friends! 🤗"
       }, { quoted: m });
     }, 6000);
 
-    await Kango.sendMessage(m.chat, {
+    await ADAWONG.sendMessage(m.chat, {
       react: { text: "✅", key: m.key }
     });
   }
@@ -249,7 +249,7 @@ ${userGreeting}
   }) => {
     try {
       // Fetch repo data from GitHub
-      const { data: repo } = await axios.get("https://api.github.com/repos/OfficialKango/KANGO-XMD");
+      const { data: repo } = await axios.get("https://github.com/ada-wongx/KANGO-XMD/");
 
       // Fetch the repo owner's avatar image
       const { data: avatarBuffer } = await axios.get(repo.owner.avatar_url, {
@@ -257,7 +257,7 @@ ${userGreeting}
       });
 
       const caption =
-        `*🌹 KANGO-XMD Repository*\n\n` +
+        `*🌹 ADAWONG Repository*\n\n` +
         `🔗 *URL:* ${repo.html_url}\n` +
         `📝 *Description:* ${repo.description || "No description"}\n` +
         `🌟 *Stars:* ${repo.stargazers_count}\n` +
@@ -272,7 +272,7 @@ ${userGreeting}
         contextInfo: {
           mentionedJid: [_0x40a183.sender],
           externalAdReply: {
-            title: "KANGO-XMD REPO",
+            title: "ADAWONG REPO",
             mediaType: 1,
             thumbnail: Buffer.from(avatarBuffer),
             sourceUrl: repo.html_url
