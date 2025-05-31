@@ -2,7 +2,7 @@ const fs = require('fs');
 const { exec } = require('child_process');
 const { getRandom } = require('../../lib/myfunc');
 
-const processAudio = async ({ Kango, m, reply, prefix, command, filter }) => {
+const processAudio = async ({ ADAWONG, m, reply, prefix, command, filter }) => {
   try {
     const quoted = m.quoted ? m.quoted : null;
     const mime = quoted?.mimetype || "";
